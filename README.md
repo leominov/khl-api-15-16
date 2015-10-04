@@ -1,5 +1,4 @@
-# khl-egluservices
-KHL API (test)
+# КХЛ API
 ## API
 Метод: POST
 

@@ -1,9 +1,10 @@
 # khl-egluservices
 KHL API (test)
-## Endpoint
-Method: POST
+## API
+Метод: POST
+
 URL: http://khl.egluservices.com/services/query.php
-## Requests
+## Запросы
 ### Фотогалерея
 ```javascript
 {

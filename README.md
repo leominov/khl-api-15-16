@@ -39,6 +39,15 @@ URL: http://khl.egluservices.com/services/query.php
     'tournamentId': tournamentId
 }
 ```
+### Игра
+```javascript
+{
+    'os': 'android',
+    'lang': 'ru',
+    'requestName': 'games',
+    'gameId': gameId,
+}
+```
 ### Игры
 ```javascript
 {

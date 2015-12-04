@@ -9,7 +9,7 @@ if not tournaments:
     exit()
 
 for tournament in tournaments:
-    print "{0}\t{1}".format(tournament["tournamentID"], tournament["eventNameEn"])
+    print "{0}\t{1}\t{2}".format(tournament["tournamentID"], tournament["eventNameEn"], tournament['logoEn'])
 
     api.setTournament(tournament["tournamentID"])
     teams = api.getTeamList()

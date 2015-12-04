@@ -1,9 +1,9 @@
-# khl-egluservices
-KHL API (test)
-## Endpoint
-Method: POST
+# КХЛ API
+## API
+Метод: POST
+
 URL: http://khl.egluservices.com/services/query.php
-## Requests
+## Запросы
 ### Фотогалерея
 ```javascript
 {
@@ -37,6 +37,15 @@ URL: http://khl.egluservices.com/services/query.php
     'lang': 'ru',
     'requestName': 'teamList',
     'tournamentId': tournamentId
+}
+```
+### Игра
+```javascript
+{
+    'os': 'android',
+    'lang': 'ru',
+    'requestName': 'games',
+    'gameId': gameId,
 }
 ```
 ### Игры
@@ -84,7 +93,23 @@ URL: http://khl.egluservices.com/services/query.php
     'lang': 'ru',
     'requestName': 'statistics',
     'tournamentId': tournamentId,
-    'position': '',
-    'type': 'pts'
+    'position': position,
+    'type': type
 }
 ```
+Тип | type | position
+--- | --- | ---
+Бомбардиры | pts |
+Бомбардиры-защитники | pts | d
+Вратари (%об) | sv_pct | gk
+Снайперы | g | 
+Снайперы-защитники | g | d
+Вратари (кн) | gaa | gk
+Ассистенты | a | 
+Ассистенты-защитники | a | d
+Вратари (сухие игры) | so | gk
+Плюс/минус | pm | 
+Победные шайбы | gwg | 
+Штраф | pim | 
+Игровое время | toi_avg | f
+Игровое время (защитники) | toi_avg | d

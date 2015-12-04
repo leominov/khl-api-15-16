@@ -2,13 +2,20 @@
 
 from main import KHLAPI
 
-tournamentId = 309
+api = KHLAPI()
+tournaments = api.getAllTournaments()
 
-api = KHLAPI(tournamentId)
-teams = api.getTeamList()
-
-if not teams:
+if not tournaments:
     exit()
 
-for team in teams:
-    print '{0};{1};{2};{3}'.format(team['rankLeague'], team['nameEn'], team['gp'], team['pts'])
+for tournament in tournaments:
+    print "{0}\t{1}".format(tournament["tournamentID"], tournament["eventNameEn"])
+
+    api.setTournament(tournament["tournamentID"])
+    teams = api.getTeamList()
+
+    if not teams:
+        continue
+
+    for team in teams:
+        print "\t{0}\t{1}".format(team["rankLeague"], team["nameEn"])

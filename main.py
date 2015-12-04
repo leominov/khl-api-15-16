@@ -30,6 +30,7 @@ class KHLAPI:
         self.tournamentId = tournamentId
 
     def getAllTournaments(self):
+        """Чемпионаты"""
         payload = {
             'requestName': 'allTournaments',
         }
@@ -37,6 +38,7 @@ class KHLAPI:
         return self._req(payload)
 
     def getTeamList(self):
+        """Команды турнира"""
         payload = {
             'requestName': 'teamList',
             'tournamentId': self.tournamentId,
@@ -45,6 +47,7 @@ class KHLAPI:
         return self._req(payload)
 
     def getTeamMembers(self, teamId):
+        """Состав команды турнира"""
         payload = {
             'requestName': 'teamMembers',
             'tournamentId': self.tournamentId,

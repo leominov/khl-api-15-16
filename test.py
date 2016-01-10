@@ -8,7 +8,7 @@ def main(with_players):
     tournaments = api.getAllTournaments()
 
     if not tournaments:
-        exit()
+        return
 
     for tournament in tournaments:
         print "{0}\t{1}\t{2}".format(tournament["tournamentID"], tournament["eventNameEn"], tournament['logoEn'])

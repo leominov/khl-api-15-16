@@ -3,7 +3,7 @@
 from main import KHLAPI
 
 
-def main():
+def main(with_players):
     api = KHLAPI()
     tournaments = api.getAllTournaments()
 
@@ -23,4 +23,16 @@ def main():
         for team in teams:
             print "\t{0}\t{1}".format(team["rankLeague"], team["nameEn"])
 
-main()
+            if not with_players:
+                continue
+
+            players = api.\
+                getTeamMembers(team["id"])
+
+            if not players:
+                continue
+
+            for player in players:
+                print "\t\t{0}\t{1}\t{2}".format(player["nameEn"], player["birthday"], player["imageUrl"])
+
+main(with_players=False)

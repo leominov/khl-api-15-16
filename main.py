@@ -29,6 +29,8 @@ class KHLAPI:
     def setTournament(self, tournamentId):
         self.tournamentId = tournamentId
 
+        return self
+
     def getAllTournaments(self):
         """Чемпионаты"""
         payload = {

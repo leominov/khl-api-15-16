@@ -20,6 +20,8 @@ def main(with_players):
         if not teams:
             continue
 
+        teams = sorted(teams, key=lambda team: int(team["rankLeague"]))
+
         for team in teams:
             print "\t{0}\t{1}".format(team["rankLeague"], team["nameEn"])
 
